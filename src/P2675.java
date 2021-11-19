@@ -4,21 +4,26 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class P11720 {
+public class P2675 {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		int n = Integer.parseInt(br.readLine());
-		int sum=0;
-		String[] s = br.readLine().split("");
+		int s = Integer.parseInt(br.readLine());
 		
-		for(int i=0; i<n; i++) {
-			sum+= Integer.parseInt(s[i]);
+		for(int i=0; i<s; i++) {
+			String[] arr = br.readLine().split(" ");
+			int a = Integer.parseInt(arr[0]);
+			String[] str = arr[1].split("");
+			
+			for(int j=0; j<str.length; j++) {
+				for(int k=0; k<a; k++) {
+					bw.write(String.valueOf(str[j]));
+				}
+			}
+			bw.write("\n");
 		}
-		
-		bw.write(String.valueOf(sum));
 		
 		br.close();
 		bw.flush();
